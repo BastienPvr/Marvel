@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.card{
+    width: 19vw;
+    height: 50vh;
+    border: gray 2px solid;
+    box-shadow: 8px 8px 0px silver;
+    float: left;
+    padding: 20px;
+    margin: 2vh 2.3vw
+}
+
+.card img{
+    max-width: 8.5vw;
+    max-height: 16vh;
+    margin: 1vh 1vw;
+    float: left
+}
+
+.links{
+    float: right;
+    margin: 3vh 1vw
+}
+
+a.fa{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: black
+}
+
+a:hover{
+    color: brown
+}
+
+.text{
+    float: left;
+    text-align: justify;
+    font-size: 12px;
+    margin-top: 2vh
+}
