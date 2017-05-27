@@ -43,3 +43,14 @@ a:hover{
     font-size: 12px;
     margin-top: 2vh
 }
+
+#pages{
+    float: right;
+    margin-right: 5vw
+}
+
+.page:hover{
+    color: brown;
+    background-color: yellow;
+    cursor: pointer
+}

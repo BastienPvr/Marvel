@@ -1,7 +1,7 @@
 var app = (function app(){
     "use strict";
     var btn, res, input, apiKey = "5f390c1426c1c76d9c9ed6d233fadf44";
-    var normalizeIt, getData, gotIt, searchIt;
+    var normalizeIt, getData, gotIt, getData2, searchIt;
 
     window.onload = function getData(){
         input = select("input");
@@ -17,7 +17,19 @@ var app = (function app(){
             gotIt(data, "b")//Récupération des infos
         });
 
-        byId("reset").onclick = getData
+        byId("reset").onclick = getData;
+        selectAll(".page").forEach(function(page){
+            page.addEventListener('click', getData2, false);
+        })
+    }
+    
+    getData2 = function getData2(){
+        var req = "https://gateway.marvel.com:443/v1/public/characters?limit=100&offset="+(this.id-1)+"00&apikey="+apiKey;
+        byId("here").innerHTML="";
+        //Requête page
+        $.get(req,function(data){
+            gotIt(data, "b")//Récupération des infos
+        });
     }
 
     gotIt = function gotIt(data, option){
@@ -39,7 +51,6 @@ var app = (function app(){
                 }
                 //On créé la carte
                 if(eval(length)){
-                    log(data.name);
                     var card = document.createElement("div");
                     card.className = "card";
                     card.id = data.id;
